@@ -39,7 +39,7 @@
             this.btnNuevaImagen.Name = "btnNuevaImagen";
             this.btnNuevaImagen.Size = new System.Drawing.Size(75, 23);
             this.btnNuevaImagen.TabIndex = 0;
-            this.btnNuevaImagen.Text = "button1";
+            this.btnNuevaImagen.Text = "Pulsame!!";
             this.btnNuevaImagen.UseVisualStyleBackColor = true;
             this.btnNuevaImagen.Click += new System.EventHandler(this.btnNuevaImagen_Click);
             // 

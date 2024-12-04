@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="boton.css">
+</head>
+
+<body>
+    <div class="form">
+        <h1>Bienvinido a La guarderia pokemon</h1>
+
+        <h2>Añadir nuevo pokemons</h2>
+        <form action="registro.php" method="post">
+
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre">
+            <br>
+            <br>
+            <label for="nivel">Nivel:</label>
+            <input type="number" name="nivel" min="1" max="100">
+            <br>
+            <br>
+            <label for="tipos">Tipos: </label>
+            <input type="text" name="tipos">
+            <br>
+            <br>
+            <label for="sexo">Sexo:</label>
+            <br>
+            <br>
+            <span>Macho</span><input type="radio" value="macho" name="sexo">
+            <span>Hembra</span><input type="radio" value="hembra" name="sexo">
+            <span>Sin sexo</span><input type="radio" value="sinsexo" name="sexo">
+            <br>
+            <br>
+            <label>Es shiny?</label>
+            <br>
+            <br>
+            <span>Si!!</span><input type="radio" value="es shiny" name="shiny" id="si">
+            <span>NO :(</span><input type="radio" value="no es shiny" name="shiny" id="no">
+            <br>
+            <br>
+            <span>A que generacion pertenece?</span>
+            <br>
+            <br>
+            <select name="generacion">
+                <option value="primera">Primera</option>
+                <option value="segunda">Segunda</option>
+                <option value="tercera">Tercera</option>
+                <option value="cuarta">Cuarta</option>
+                <option value="quinta">Quinta</option>
+                <option value="sexta">Sexta</option>
+                <option value="septima">Septima</option>
+                <option value="octava">Octava</option>
+                <option value="novena">Novena</option>
+            </select>
+            <br>
+            <br>
+            <button class="ov-btn-grow-ellipse">
+
+                <input type="submit" value="Añadir poke" class="input">
+            </button>
+        </form>
+        <form action="mostrar.php" method="post">
+            <button class="ov-btn-grow-ellipse">
+                <input type="submit" value="Ver pokemons" class="input">
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<style>
+    body {
+        background-image: url(Guarderia.jpg);
+        background-repeat: none;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form {
+        background-color: black;
+        opacity: .7;
+        color: white;
+        padding: 25px;
+    }
+
+    .input {
+        background-color: transparent;
+        border: none;
+    }
+</style>

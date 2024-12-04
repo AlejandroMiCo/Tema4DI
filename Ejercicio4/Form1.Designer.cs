@@ -71,6 +71,7 @@
             // rdbSuma
             // 
             this.rdbSuma.AutoSize = true;
+            this.rdbSuma.Checked = true;
             this.rdbSuma.Location = new System.Drawing.Point(123, 191);
             this.rdbSuma.Name = "rdbSuma";
             this.rdbSuma.Size = new System.Drawing.Size(31, 17);
@@ -87,7 +88,6 @@
             this.rdbResta.Name = "rdbResta";
             this.rdbResta.Size = new System.Drawing.Size(28, 17);
             this.rdbResta.TabIndex = 4;
-            this.rdbResta.TabStop = true;
             this.rdbResta.Text = "-";
             this.rdbResta.UseVisualStyleBackColor = true;
             this.rdbResta.CheckedChanged += new System.EventHandler(this.CheckedChanged);
@@ -99,7 +99,6 @@
             this.rdbMulti.Name = "rdbMulti";
             this.rdbMulti.Size = new System.Drawing.Size(29, 17);
             this.rdbMulti.TabIndex = 5;
-            this.rdbMulti.TabStop = true;
             this.rdbMulti.Text = "*";
             this.rdbMulti.UseVisualStyleBackColor = true;
             this.rdbMulti.CheckedChanged += new System.EventHandler(this.CheckedChanged);
@@ -111,7 +110,6 @@
             this.rdbDivi.Name = "rdbDivi";
             this.rdbDivi.Size = new System.Drawing.Size(30, 17);
             this.rdbDivi.TabIndex = 6;
-            this.rdbDivi.TabStop = true;
             this.rdbDivi.Text = "/";
             this.rdbDivi.UseVisualStyleBackColor = true;
             this.rdbDivi.CheckedChanged += new System.EventHandler(this.CheckedChanged);

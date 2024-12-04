@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             txtPass = new TextBox();
             button1 = new Button();
             SuspendLayout();
@@ -58,9 +59,10 @@
             ClientSize = new Size(249, 223);
             Controls.Add(button1);
             Controls.Add(txtPass);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "PIN de acceso";
             ResumeLayout(false);
             PerformLayout();
         }

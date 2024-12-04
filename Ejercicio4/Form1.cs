@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -76,7 +77,7 @@ namespace Ejercicio4
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Text = ($"{cont / 60, 2}: {cont++ % 60, 2}");
+            this.Text = ($"{cont / 60:00}:{cont++ % 60:00}");
         }
     }
 }

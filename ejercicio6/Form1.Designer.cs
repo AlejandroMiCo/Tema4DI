@@ -1,6 +1,6 @@
 ﻿namespace ejercicio6
 {
-    partial class Form1
+    partial class Movil
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movil));
             txtTelefono = new TextBox();
             btnReset = new Button();
             menuStrip1 = new MenuStrip();
@@ -107,7 +108,7 @@
             acercaDeToolStripMenuItem.Text = "Acerca de...";
             acercaDeToolStripMenuItem.Click += acercaDeToolStripMenuItem_Click;
             // 
-            // Form1
+            // Movil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -115,9 +116,10 @@
             Controls.Add(btnReset);
             Controls.Add(txtTelefono);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Movil";
+            Text = "Movil Chulo";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

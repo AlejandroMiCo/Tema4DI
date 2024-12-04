@@ -75,7 +75,7 @@ namespace Ejercicio5
         {
             lblIndicesSelecionados.Text = "";
             var a = lbxPrincipal.SelectedIndices.Cast<int>().ToArray();
-            Array.ForEach(a, b => lblIndicesSelecionados.Text += b.ToString());
+            Array.ForEach(a, b => lblIndicesSelecionados.Text += b+", ");
 
         }
 
@@ -101,7 +101,6 @@ namespace Ejercicio5
             else
             {
                 this.Icon = lizard;
-
             }
         }
     }

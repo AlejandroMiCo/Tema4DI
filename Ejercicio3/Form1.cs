@@ -35,7 +35,6 @@ namespace Ejercicio3
 
                     if (cbxModal.Checked)
                     {
-
                         f.ShowDialog();
                     }
                     else

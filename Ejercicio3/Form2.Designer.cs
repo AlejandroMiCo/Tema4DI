@@ -40,7 +40,7 @@
             this.pbcImagen.Margin = new System.Windows.Forms.Padding(0);
             this.pbcImagen.Name = "pbcImagen";
             this.pbcImagen.Size = new System.Drawing.Size(1034, 591);
-            this.pbcImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbcImagen.TabIndex = 0;
             this.pbcImagen.TabStop = false;
             // 
@@ -54,8 +54,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcImagen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

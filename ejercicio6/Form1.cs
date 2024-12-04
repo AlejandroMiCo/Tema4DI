@@ -1,8 +1,8 @@
 namespace ejercicio6
 {
-    public partial class Form1 : Form
+    public partial class Movil : Form
     {
-        public Form1()
+        public Movil() //Salir con X, titulo, icono, revision cambio de color tras reset, excepcion en archivo
         {
             InitializeComponent();
 
@@ -16,7 +16,6 @@ namespace ejercicio6
                 button1.TabIndex = 1;
 
                 button1.Tag = false;
-
 
                 if (i < 9)
                 {
@@ -43,7 +42,6 @@ namespace ejercicio6
                     txtTelefono.Text += button1.Text;
                     button1.BackColor = Color.Yellow;
                     button1.Tag = true;
-
                 };
 
                 button1.MouseEnter += (sender, e) =>
@@ -59,8 +57,9 @@ namespace ejercicio6
                     }
                     else
                     {
-                        button1.BackColor = Color.Empty;
-                    };
+                        button1.BackColor = Color.White;
+                    }
+                    ;
                 };
 
                 button1.UseVisualStyleBackColor = true;
@@ -77,12 +76,29 @@ namespace ejercicio6
             Form2 form2 = new Form2();
             do
             {
-                if (form2.ShowDialog() == DialogResult.OK && form2.txtPass.Text == pass)
+                switch (form2.ShowDialog())
                 {
-                    error = false;
+                    case DialogResult.OK:
+                        if (form2.txtPass.Text == pass)
+                        {
+                            error = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Error en la contraseña",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                            );
+                        }
+                        cont++;
+                        break;
+                    default:
+                        error = false;
+                        this.Close();
+                        break;
                 }
-                cont++;
-
                 if (cont == 3 && error)
                 {
                     this.Close();
@@ -98,6 +114,7 @@ namespace ejercicio6
             {
                 if (ctrl.GetType() == typeof(Button))
                 {
+                    ((Button)ctrl).Tag = false;
                     ((Button)ctrl).BackColor = Color.White;
                 }
             }
@@ -105,7 +122,12 @@ namespace ejercicio6
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Es una app con interfaz de movil antiguo con la intencion de practicar diseño en windowsForms", "Movil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                "Es una app con interfaz de movil antiguo con la intencion de practicar diseño en windowsForms",
+                "Movil",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
 
         private void grabarNumeroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,7 +135,31 @@ namespace ejercicio6
             if (txtTelefono.Text != "")
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.ShowDialog();
+
+                saveFileDialog.OverwritePrompt = false;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName, true))
+                        {
+                            sw.WriteLine(txtTelefono.Text);
+                        }
+                    }
+                    catch (Exception ex)
+                        when (ex is ArgumentException
+                            || ex is UnauthorizedAccessException
+                            || ex is IOException
+                        )
+                    {
+                        MessageBox.Show(
+                            "Error al seleccionar el archivo",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
             }
         }
 
